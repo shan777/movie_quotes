@@ -12,3 +12,14 @@ export const signUp = (userInfo) => {
         }
     }
 }
+
+export const signIn = userInfo => async dispatch => { //exactly same as line 4 & 5 above
+    try {
+        const resp = await axios.post('http://api.reactprototypes.com/signin', userInfo); //making request to server
+        
+        console.log('sign in response: ', resp);
+
+    } catch (err) {
+        console.log('Sign in error: ', err);
+    }
+}
