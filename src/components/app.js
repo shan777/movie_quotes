@@ -20,7 +20,7 @@ const App = () => (
         <div className="container">
             <Route exact path="/" component={Home}/>
             <Route path="/about" component={auth(About)}/>
-            <Route path="/movie-quote" component={MovieQuotes}/>
+            <Route path="/movie-quote" component={auth(MovieQuotes)}/>
             <Route path="/person-list" render={
                 props => <List {...props} title="List of People" list={people}/>
             }/>

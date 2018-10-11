@@ -1,14 +1,28 @@
-import React from 'react';
-import auth from '../hoc/auth'; //importing that function
-//you can put auth anywhere like here
+import React, { Component} from 'react';
+import { connect } from 'react-redux';
+import { getMovieQuote } from '../actions';
 
-const MovieQuote = props => {
-    return(
+class MovieQuote extends Component {
+    componentDidMount() {
+        this.props.getMovieQuote();
+    }
+
+    render() {
+        return(
         <div className="center">
-            <h1>Movie Quote!</h1>
-            <h4>You had me at hello.</h4>
+            <h2>Movie Quote!</h2>
+            <h4>{this.props.quote}</h4>
         </div>
-    );
+        );
+    }
 }
 
-export default auth(MovieQuote);
+function mapStateToProps(state) {
+    return {
+        quote: state.movie.quote
+    }
+}
+
+export default connect(mapStateToProps, {
+    getMovieQuote: getMovieQuote
+}) (MovieQuote);
