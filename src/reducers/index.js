@@ -5,8 +5,8 @@ import movieReducer from './movie_reducer';
 
 const rootReducer = combineReducers({
     form: formReducer,
-    userReducer: userReducer,
-    movieReducer: movieReducer
+    user: userReducer,
+    movie: movieReducer
 });
 
 export default rootReducer;

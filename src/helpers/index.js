@@ -3,7 +3,7 @@ import React from 'react';
 export const renderInput = props => {
     const {input, label, type, meta: {error, touched}} = props;
 
-    console.log('Render Input:', props);
+    // console.log('Render Input:', props);
 
     return (
         <div className="row">
