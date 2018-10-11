@@ -26,7 +26,7 @@ export const signIn = userInfo => async dispatch => { //exactly same as line 4 &
     try {
         const resp = await axios.post('http://api.reactprototypes.com/signin', userInfo); //making request to server
         
-        console.log('sign in response: ', resp);
+        // console.log('sign in response: ', resp);
 
         localStorage.setItem('token', resp.data.token); //localStorage is just an object that has a special meaning in JS
         // can even do -> localStorage.token = resp.data.token;
